@@ -4264,6 +4264,32 @@
 		body.is-mobile .banner > article {
 			background-attachment: scroll;
 		}
+/* Facts */
+.mosh-cool-facts-area.service-page {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 500px;
+}
+
+.mosh-cool-facts-area.service-page .counter-area h3,
+.mosh-cool-facts-area.service-page .cool-facts-content p {
+    color: #fff;
+}
+.mosh-cool-facts-area {
+    width: 100%;
+}
+
+.mosh-cool-facts-area .counter-area > h3 {
+    color: #4a7aec;
+    font-size: 60px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.mosh-cool-facts-area .cool-facts-content > p {
+    color: #292d4f;
+}
 
 /* Main */
 
