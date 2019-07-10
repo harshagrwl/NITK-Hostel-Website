@@ -26,6 +26,45 @@
 				  clear: both;
 				}
 				</style>
+				<style>
+					.filterDiv {
+					  float: left;
+					  /* background-color: #2196F3; */
+					  /* color: #ffffff; */
+					  width: 280px;
+					  line-height: 210px;
+					  /* text-align: center; */
+					  margin: 5px;
+					  display: none;
+					}
+					
+					.show {
+					  display: block;
+					}
+					
+					.container {
+					  margin-top: 20px;
+					  overflow: hidden;
+					}
+					
+					/* Style the buttons */
+					.btn {
+					  border: none;
+					  outline: none;
+					  padding: 12px 16px;
+					  background-color: #f1f1f1;
+					  cursor: pointer;
+					}
+					
+					.btn:hover {
+					  background-color: #ddd;
+					}
+					
+					.btn.active {
+					  background-color: #666;
+					  color: white;
+					}
+					</style>
 	</head>
 	<body>
 
@@ -192,37 +231,130 @@
 			
 			</section>
 		
-		<!-- Three -->
+		<!-- Three
+			<section id="three" class="wrapper style2">
+				<!-- <div class="inner">
+					<header class="align-center">
+		
+						<h2>Gallery</h2>
+					</header>
+					<div id=myBtnContainer">
+					<button class="btn active" onclick="filterSelection('all')">All</button>
+					<button class="btn" onclick="filterSelection('campus')">Campus</button>
+					<button class="btn" onclick="filterSelection('sports')">Sports</button>
+					<button class="btn" onclick="filterSelection('fests')">Fests</button>
+					<button class="btn" onclick="filterSelection('activities')">Student Activities</button>
+					</div>
+						<!-- <div>
+							<div class="image fit">
+								<a href="#"><img src="images/pic01.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image">
+								<a href="#"><img src="images/pic02.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image">
+								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image">
+								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
+							</div>
+						</div> -->
+						<!-- <div class="container">
+						<div class="imgrow">
+							<div class="filterDiv all sports">
+							  <img src="images/slide01.jpg" alt="Snow" style="width:100%">
+							</div>
+							<div class="imgcolumn">
+							  <img src="images/slide03.jpg" alt="Forest" style="width:100%">
+							</div>
+							<div class="imgcolumn">
+							  <img src="images/slide02.jpg" alt="Mountains" style="width:100%">
+							</div>
+							<div class="imgcolumn">
+							  <img src="images/slide04.jpg" alt="Mountains" style="width:100%">
+							</div>
+						  </div>
+						  </div>
+					
+				</div> -->
+			<!-- </section> -->
+			<!-- Control buttons -->
 			<section id="three" class="wrapper style2">
 				<div class="inner">
 					<header class="align-center">
 		
 						<h2>Gallery</h2>
 					</header>
-					<div class="gallery">
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic01.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic02.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('campus')"> Campus</button>
+  <button class="btn" onclick="filterSelection('sports')"> Sports</button>
+  <button class="btn" onclick="filterSelection('fests')"> Fests</button>
+  <button class="btn" onclick="filterSelection('activities')"> Campus Activities</button>
+</div>
+
+<div class="container">
+  <div class="filterDiv sports activities">
+	<img src="images/pic01.jpg" height="200px" width="270px">
+  </div>
+  <div class="filterDiv campus activities"><img src="images/pic02.jpg" height="200px" width="270px">  </div>
+  <div class="filterDiv fests"><img src="images/pic03.jpg" height="200px" width="270px"></div>
+  <div class="filterDiv fests activities"><img src="images/pic04.jpg" height="200px" width="270px"></div>
+</div>
+</div>
+</section>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 
 		<!-- Footer -->
