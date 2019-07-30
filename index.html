@@ -6,19 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="/assets/js/jquery.counterup.js"></script>
+		<!-- Compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	 <!-- Compiled and minified JavaScript -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 		<style>
 				* {
 				  box-sizing: border-box;
 				}
-				
+
 				/* Create four equal columns that floats next to each other */
 				.column {
 				  float: left;
 				  width: 25%;
-				
+
 				   /* Should be removed. Only for demonstration */
 				}
-				
+
 				/* Clear floats after the columns */
 				.row:after {
 				  content: "";
@@ -37,16 +43,16 @@
 					  margin: 5px;
 					  display: none;
 					}
-					
+
 					.show {
 					  display: block;
 					}
-					
+
 					.container {
 					  margin-top: 20px;
 					  overflow: hidden;
 					}
-					
+
 					/* Style the buttons */
 					.btn {
 					  border: none;
@@ -55,11 +61,11 @@
 					  background-color: #f1f1f1;
 					  cursor: pointer;
 					}
-					
+
 					.btn:hover {
 					  background-color: #ddd;
 					}
-					
+
 					.btn.active {
 					  background-color: #666;
 					  color: white;
@@ -75,11 +81,20 @@
 			</header>
 
 		<!-- Nav -->
+		<ul id="rep" class="dropdown-content">
+<li><a href="#!">Students</a></li>
+<li class="divider"></li>
+<li><a href="#!">Wardens</a></li>
+<li class="divider"></li>
+<li><a href="#!">Staff</a></li>
+</ul>
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Link 1</a></li>
-					<li><a href="generic.html">Link 2</a></li>
+
+					<li><a href="index.html">Home</a></li><br>
+					<li><a href="about.html">About us</a></li>
+					<li><a href="representatives.html" class="dropdown-trigger" dropdown-data="rep">Representatives</a></li>
+					<li><a href="facilities.html">Facilities</a></li>
 				</ul>
 			</nav>
 
@@ -134,7 +149,7 @@
 
 						<div>
 							<div class="box">
-							
+
 								<div class="content">
 									<header class="align-center">
 										<p>Check the latest news and announcements</p>
@@ -143,8 +158,8 @@
 									<ul>
 										<li>
 											Campaign on 'Swatchtha hi Sewa'
-										</li>								
-				
+										</li>
+
 										<li>
 											Opening of new Beauty Parlour in Girls Block
 										</li>
@@ -176,7 +191,7 @@
 
 						<div>
 							<div class="box">
-	
+
 								<div class="content">
 									<header class="align-center">
 										<p>Find the important reports and documents</p>
@@ -190,7 +205,7 @@
 												<a href = "https://www.nitk.ac.in/document/attachments/309/annual_report_english.pdf", target = blank >Hostel Report 2018</a>
 										</li>
 									</ul>
-							
+
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
@@ -222,20 +237,20 @@
 									<h2 align="center"><strong>45</h2></strong>
 									<p align="center"><strong>Staff</strong></p>
 							</div>
-	
-				
+
+
 						  </div>
 						  </div>
 						<!-- <h3 style="float: left; width: 50%;"><span style="color:blue; font-weight:bold">16</span>   Blocks</h3>
 						<h3 style="float: right; width: 50%;"><span style="color:blue; font-weight:bold">5000+</span>   Students</h3> -->
-			
+
 			</section>
-		
+
 		<!-- Three
 			<section id="three" class="wrapper style2">
 				 <div class="inner">
 					<header class="align-center">
-		
+
 						<h2>Gallery</h2>
 					</header>
 					<div id=myBtnContainer">
@@ -281,17 +296,17 @@
 							</div>
 						  </div>
 						  </div>
-					
+
 				</div> -->
 			<!-- </section> -->
 			<!-- Control buttons -->
 			<section id="three" class="wrapper style2">
 				<div class="inner">
 					<header class="align-center">
-		
+
 						<h2>Gallery</h2>
 					</header>
-			
+
 
 <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
@@ -306,7 +321,7 @@
 				<img src="images/pic01.jpg" height="200px" width="270px">
   			</div>
   			<div class="filterDiv campus activities">
-	  			<img src="images/pic02.jpg" height="200px" width="270px"> 
+	  			<img src="images/pic02.jpg" height="200px" width="270px">
  			</div>
   			<div class="filterDiv fests">
 	  			<img src="images/pic03.jpg" height="200px" width="270px">
@@ -344,7 +359,7 @@ function w3RemoveClass(element, name) {
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
     }
   }
   element.className = arr1.join(" ");
@@ -408,12 +423,12 @@ for (var i = 0; i < btns.length; i++) {
 							<b>Fax:</b> +91 8242474033
 						</li>
 						<li align="left">
-							<b>Email:</b> 
+							<b>Email:</b>
 						</li>
 						<li align="left">
-								<b>Facebook:</b> 
+								<b>Facebook:</b>
 						</li>
-						
+
 						<li align="left">
 							<b>Instagram:</b>
 							<br>
@@ -424,7 +439,7 @@ for (var i = 0; i < btns.length; i++) {
 				<div class="column">
 						<div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="270" id="gmap_canvas" src="https://maps.google.com/maps?q=national%20institute%20of%20technology%20karnataka&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:278px;width:267px;}.gmap_canvas {overflow:hidden;background:none!important;height:278px;width:267px;}</style></div>
 				</div>
-                
+
 				</div>
 				<!-- <div class="container">
 					 <ul class="icons">
@@ -433,7 +448,7 @@ for (var i = 0; i < btns.length; i++) {
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 					</ul> -->
-				
+
 				<!-- <p>Designed and Developed by TaskForce NITK</p> -->
 			</footer>
 
