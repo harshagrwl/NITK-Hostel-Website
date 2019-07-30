@@ -6,6 +6,65 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+				<style>
+				* {
+				  box-sizing: border-box;
+				}
+
+				/* Create four equal columns that floats next to each other */
+				.column {
+				  float: left;
+				  width: 25%;
+
+				   /* Should be removed. Only for demonstration */
+				}
+
+				/* Clear floats after the columns */
+				.row:after {
+				  content: "";
+				  display: table;
+				  clear: both;
+				}
+				</style>
+				<style>
+					.filterDiv {
+					  float: left;
+					  /* background-color: #2196F3; */
+					  /* color: #ffffff; */
+					  width: 280px;
+					  line-height: 210px;
+					  /* text-align: center; */
+					  margin: 5px;
+					  display: none;
+					}
+
+					.show {
+					  display: block;
+					}
+
+					.container {
+					  margin-top: 20px;
+					  overflow: hidden;
+					}
+
+					/* Style the buttons */
+					.btn {
+					  border: none;
+					  outline: none;
+					  padding: 12px 16px;
+					  background-color: #f1f1f1;
+					  cursor: pointer;
+					}
+
+					.btn:hover {
+					  background-color: #ddd;
+					}
+
+					.btn.active {
+					  background-color: #666;
+					  color: white;
+					}
+					</style>
 	</head>
 	<body class="subpage">
 
@@ -38,6 +97,7 @@
 
 		<!-- Two -->
 			<section id="two" class="wrapper style2">
+
 				<div class="inner">
 					<div class="box">
 						<div class="content">
@@ -111,19 +171,86 @@ International Standard, 50 Mts. x 25 Mts. Size, with 90 Cm. depth at shallow end
 				</div>
 			</section>
 
-			<section id="two" class="wrapper style2" style="margin-top:-100px;">
+			<section id="three" class="wrapper style2">
 				<div class="inner">
-					<div class="box">
-						<div class="content">
-							<header class="align-center">
-								<p style="font-size:35px;">Gallery</p>
+				<div class="box">
+				<div class="'content">
+				<header class="align-center">
+					<p style="font-size:35px;">Gallery</p>
 
-							</header>
-						
-						</div>
-					</div>
-				</div>
-			</section>
+					</header>
+
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('campus')"> Library</button>
+  <button class="btn" onclick="filterSelection('sports')"> Sports</button>
+  <button class="btn" onclick="filterSelection('fests')"> Fests</button>
+  <button class="btn" onclick="filterSelection('activities')"> Campus Activities</button>
+</div>
+
+		<div class="container">
+  			<div class="filterDiv sports activities">
+				<img src="images/pic01.jpg" height="200px" width="270px">
+  			</div>
+  			<div class="filterDiv campus activities">
+	  			<img src="images/pic02.jpg" height="200px" width="270px">
+ 			</div>
+  			<div class="filterDiv fests">
+	  			<img src="images/pic03.jpg" height="200px" width="270px">
+  			</div>
+  			<div class="filterDiv fests activities">
+			  <img src="images/pic04.jpg" height="200px" width="270px">
+  			</div>
+		</div>
+	</div>
+</div>
+</div>
+</section>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 		<!-- Footer -->
 		<footer id="footer">
 				<p><a href="www.nitk.ac.in">National Institute of Technology Karnataka</a></p>
